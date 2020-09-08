@@ -1,5 +1,7 @@
 nav>a {
-    color: cadetblue;
     padding: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header-row {
+    width: 100%;
 }

@@ -1,0 +1,20 @@
+<div class="row">
+
+    <div *ngFor="let usuario of adminusr" class="col-xs-12 col-md-4 card">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{ usuario.name }}</mat-card-title>
+                <mat-card-subtitle>{{ usuario.type }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                teléfono: {{ usuario.phone }}<br /> ciudad: {{ usuario.city }}
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-raised-button color="primary">ver mas</a>
+                <a mat-raised-button color="accent">borrar</a>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+
+</div>
