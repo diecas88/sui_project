@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UsuariosService } from './../../services/usuarios.service';
+
 @Component({
   selector: 'app-admin-list',
   templateUrl: './admin-list.component.html',
@@ -7,37 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminListComponent implements OnInit {
 
-  adminusr = [
-    {
-      name: 'diego',
-      phone: 3168232891,
-      type: 'human',
-      city: 'lebrija'
-    },
-    {
-      name: 'saturno',
-      phone: 0,
-      type: 'cat',
-      city: 'lebrija'
+  adminusr = [];
 
-    },
-    {
-      name: 'lulu',
-      phone: 0,
-      type: 'dog',
-      city: 'lebrija'
-    },
-    {
-      name: 'capucho',
-      phone: 0,
-      type: 'cat',
-      city: 'lebrija'
-    }
-  ];
-
-  constructor() { }
+  constructor(
+    private usuarioservice: UsuariosService
+  ) { }
 
   ngOnInit(): void {
+    this.fetchUsers();
+  }
+
+  fetchUsers(){
+    this.usuarioservice.getAllUsers()
+    .subscribe(usuarios => {
+      this.adminusr = usuarios;
+    });
   }
 
 }

@@ -17,6 +17,10 @@ const routes: Routes = [
         component: AdminListComponent
       },
       {
+        path: 'admin/:id',
+        component: AdminComponent
+      },
+      {
         path: 'users',
         component: UsersComponent
       },
@@ -26,11 +30,11 @@ const routes: Routes = [
       },
       {
         path: '',
-        component: AdminComponent
+        component: UsersComponent
       },
       {
         path: '**',
-        component: AdminComponent
+        component: UsersComponent
       }
     ]
   }

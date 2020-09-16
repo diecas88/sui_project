@@ -3,14 +3,14 @@
     <div *ngFor="let usuario of adminusr" class="col-xs-12 col-md-4 card">
         <mat-card>
             <mat-card-header>
-                <mat-card-title>{{ usuario.name }}</mat-card-title>
-                <mat-card-subtitle>{{ usuario.type }}</mat-card-subtitle>
+                <mat-card-title>{{ usuario.name }} {{ usuario.last_name}}</mat-card-title>
+                <mat-card-subtitle>{{ usuario.user_role }}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-                teléfono: {{ usuario.phone }}<br /> ciudad: {{ usuario.city }}
+                Dirección: {{ usuario.address }}<br /> Fec. Nacimento: {{ usuario.born_date }}<br /> Teléfono: {{ usuario.phone }}<br /> Genero: {{ usuario.gender }}
             </mat-card-content>
             <mat-card-actions>
-                <a mat-raised-button color="primary">ver mas</a>
+                <a mat-raised-button color="primary" [routerLink]="['/admin/admin', usuario.id_user]">ver mas</a>
                 <a mat-raised-button color="accent">borrar</a>
             </mat-card-actions>
         </mat-card>

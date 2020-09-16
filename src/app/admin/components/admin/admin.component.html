@@ -1,1 +1,20 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ipsa, consequatur laudantium perferendis dolores facere quae ratione laborum aperiam? Nobis ab voluptatem iusto laborum cumque accusamus voluptas obcaecati modi porro!
+<div class="row">
+
+    <div *ngIf="usuario" class="col-xs-12 col-md-4 card">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{ usuario.name }} {{ usuario.last_name}}</mat-card-title>
+                <mat-card-subtitle>{{ usuario.user_role }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                Dirección: {{ usuario.address }}<br /> Fec. Nacimento: {{ usuario.born_date }}<br /> Teléfono: {{ usuario.phone }}<br /> Genero: {{ usuario.gender }}
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-raised-button color="primary">ver mas</a>
+                <a mat-raised-button color="accent">borrar</a>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+
+</div>
