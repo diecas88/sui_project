@@ -1,3 +1,7 @@
-.full-width-table {
-  width: 100%;
+.containl {
+    margin: 25px;
+}
+
+table {
+    width: 100%;
 }

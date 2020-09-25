@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  // este campo es tipo form control
+  emailField: FormControl;
+
+  constructor() {
+    this.emailField = new FormControl('admin@mail.com',[
+      Validators.minLength(4),
+      Validators.email,
+      Validators.required
+    ]);
+
+    /*
+    this.emailField.valueChanges
+    .subscribe(value => {
+      console.log(value);
+    });
+    */
+   }
 
   ngOnInit(): void {
+  }
+
+  public sendMail() {
+    if (this.emailField.valid){
+      console.log('your information was sent succefull!');
+    }
   }
 
 }

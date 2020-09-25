@@ -1,1 +1,4 @@
-<p>footer works!</p>
+<mat-form-field>
+    <input matInput [formControl]="emailField" type="email">
+</mat-form-field> &nbsp;
+<button mat-raised-button color="accent" [disabled]="emailField.invalid" (click)="sendMail()">send me news!!</button>
