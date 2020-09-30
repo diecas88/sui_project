@@ -22,7 +22,7 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent
-      }
+      },
     ]
   },
   {
@@ -32,7 +32,15 @@ const routes: Routes = [
   {
     path: 'demo',
     component: DemoComponent
-  }
+  },
+  {
+    path: 'access',
+    loadChildren: () => import('./access/access.module').then(m => m.AccessModule)
+  },
+  {
+    path: 'basics',
+    loadChildren: () => import('./basics/basics.module').then(m => m.BasicsModule)
+  },
 ];
 
 @NgModule({

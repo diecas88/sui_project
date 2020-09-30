@@ -12,9 +12,10 @@ import { NavComponent } from './components/nav/nav.component';
 
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsersEditComponent } from './components/users-edit/users-edit.component';
 
 @NgModule({
-  declarations: [AdminComponent, UsersComponent, AdminListComponent, NavComponent, UsersListComponent],
+  declarations: [AdminComponent, UsersComponent, AdminListComponent, NavComponent, UsersListComponent, UsersEditComponent],
   imports: [
     CommonModule,
     SharedModule,
