@@ -7,18 +7,18 @@
             <h1>Mis tareas</h1>
             <p><strong>Sui</strong> te permite tener una lista completa de tus tareas:</p>
 
-            <form class="task-form">
+            <form class="task-form" [formGroup]="form">
                 <mat-form-field class="task-full-width">
                     <mat-label>Tarea</mat-label>
-                    <input matInput placeholder="¿Que tengo que hacer?" [(ngModel)]="newTask" name="newTask">
+                    <input matInput formControlName="name_task" placeholder="¿Que tengo que hacer?">
                 </mat-form-field>
 
                 <mat-form-field class="task-full-width">
                     <mat-label>Descripción</mat-label>
-                    <textarea matInput placeholder="Descripción puede ser opcional..." [(ngModel)]="descriptionTask" name="descriptionTask"></textarea>
+                    <textarea matInput formControlName="description_task" placeholder="Descripción puede ser opcional..."></textarea>
                 </mat-form-field>
                 <div>
-                    <button mat-raised-button color="primary" (click)="addtask()">agregar</button>
+                    <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="addtask()">agregar</button>
                 </div>
 
             </form>
@@ -26,14 +26,14 @@
 
         <div class="col-xs-12 col-md-6">
             <h1>lista de tareas</h1>
-            <ul *ngFor="let mytasks of allTask; let i=index;">
-                <li>
-                    {{ mytasks.nametask }}
-                    <button mat-icon-button color="accent" (click)="deletetask(i)">
-                    <mat-icon>clear</mat-icon>
+            <div class="row" *ngFor="let mytasks of allTask; let i=index;">
+                <div class="col-xs-12">
+                    {{ mytasks.name_task }}: {{ mytasks.description_task }}
+                    <button mat-icon-button color="accent" (click)="deletetask(i,mytasks.id_task)">
+                        <mat-icon>clear</mat-icon>
                     </button>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -1,18 +1,19 @@
-<mat-toolbar color="link">
-    <mat-toolbar-row>
-        <div class="row between-xs middle-xs header-row"></div>
-        SUI
-        <nav>
-            <a mat-button routerLink="/home">home</a>
-            <a mat-button routerLink="/access/login">login</a>
-            <a mat-button routerLink="/basics/mytasks">my tasks</a>
-            <a mat-button routerLink="/contact">contact</a>
-            <a mat-button routerLink="/admin">admin</a>
-            <a mat-button routerLink="/demo">demo</a>
-        </nav>
-        <a mat-raised-button matBadge="4">
-            <mat-icon>add_task</mat-icon>
-        </a>
+<div class="mainbar">
+    <mat-toolbar color="link">
+        <mat-toolbar-row>
+            SUI
+            <nav>
+                <a mat-button routerLink="/home">home</a>
+                <a mat-button routerLink="/access/login">login</a>
+                <a mat-button routerLink="/basics/mytasks">my tasks</a>
+                <a mat-button routerLink="/contact">contact</a>
+                <a mat-button routerLink="/admin">admin</a>
+                <a mat-button routerLink="/demo">demo</a>
+            </nav>
+            <a mat-raised-button [matBadge]="allTask">
+                <mat-icon>add_task</mat-icon>
+            </a>
 
-    </mat-toolbar-row>
-</mat-toolbar>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>

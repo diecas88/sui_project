@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BasicsRoutingModule } from './basics-routing.module';
 import { TasksComponent } from './components/tasks/tasks.component';
@@ -11,7 +11,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
   imports: [
     CommonModule,
     BasicsRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class BasicsModule { }
